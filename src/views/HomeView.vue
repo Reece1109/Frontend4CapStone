@@ -6,7 +6,7 @@
       <button class="btn btn-primary">Book now</button>
     </div>
     <video autoplay loop>
-      <source src="https://za.pinterest.com/pin/846958273694923327/" type="video/mp4">
+      <source src="../assets/Home_page.mp4" type="video/mp4">
     </video>
   </div>
 </template>
@@ -32,6 +32,10 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+video {
+  height: 100%;
 }
 
 h1 {
