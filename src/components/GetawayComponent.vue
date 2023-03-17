@@ -1,13 +1,93 @@
 <template>
-  <div>
-    <h1>Find Your Perfect Airbnb Getaways</h1>
-    <div v-for="place in places" :key="place.id" class="place-card">
-      <img :src="place.image" alt="Place image">
-      <div class="place-details">
-        <h2>{{ place.title }}</h2>
-        <p>{{ place.description }}</p>
-        <p>Price per night: {{ place.price }}</p>
-        <button @click="book(place.id)">Book Now</button>
+  <template>
+  <div class="container my-5">
+    <h1 class="text-center mb-5">Featured Getaways</h1>
+    <div class="row">
+      <div v-for="getaway in featuredGetaways" :key="getaway.id" class="col-md-4">
+        <div class="card mb-4">
+          <img :src="getaway.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ getaway.name }}</h5>
+            <p class="card-text">{{ getaway.description }}</p>
+            <ul class="list-unstyled">
+              <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="h4">$ {{ getaway.price }}/night</p>
+              <button @click="addToCart(getaway)" class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="text-center my-5">All Getaways</h1>
+    <div class="row">
+      <div v-for="getaway in allGetaways" :key="getaway.id" class="col-md-4">
+        <div class="card mb-4">
+          <img :src="getaway.image" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ getaway.name }}</h5>
+            <p class="card-text">{{ getaway.description }}</p>
+            <ul class="list-unstyled">
+              <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
+            </ul>
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="h4">$ {{ getaway.price }}/night</p>
+              <button @click="addToCart(getaway)" class="btn btn-primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="text-center mb-4">Getaways</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <h2>Featured Getaways</h2>
+      </div>
+      <div class="col-12">
+        <div class="card-deck">
+          <div class="card" v-for="getaway in featuredGetaways" :key="getaway.id">
+            <img class="card-img-top" :src="getaway.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ getaway.name }}</h5>
+              <p class="card-text">{{ getaway.description }}</p>
+              <h6>Amenities:</h6>
+              <ul>
+                <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
+              </ul>
+              <button class="btn btn-primary" @click="addToCart(getaway)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <h2>All Getaways</h2>
+      </div>
+      <div class="col-12">
+        <div class="card-columns">
+          <div class="card" v-for="getaway in allGetaways" :key="getaway.id">
+            <img class="card-img-top" :src="getaway.image" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{ getaway.name }}</h5>
+              <p class="card-text">{{ getaway.description }}</p>
+              <h6>Amenities:</h6>
+              <ul>
+                <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
+              </ul>
+              <button class="btn btn-primary" @click="addToCart(getaway)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -17,54 +97,79 @@
 export default {
   data() {
     return {
-      places: [
+      Getaway: [
         {
           id: 1,
-          title: 'Charming Cottage in the Woods',
-          image: 'https://via.placeholder.com/400x300',
-          description: 'Escape to this cozy cottage nestled in the forest. Perfect for a weekend getaway with your loved one.',
-          price: 100
+          name: 'Beach House',
+          description: 'Beautiful beach house with ocean view.',
+          amenities: ['Ocean view', 'Private pool', 'Beach access'],
+          image: 'https://via.placeholder.com/300x200',
+          price: 500
         },
         {
           id: 2,
-          title: 'Luxury Beachfront Condo',
-          image: 'https://via.placeholder.com/400x300',
-          description: 'Wake up to the sound of waves crashing on the shore in this stunning beachfront condo. Ideal for a family vacation.',
-          price: 250
+          name: 'Mountain Retreat',
+          description: 'Cozy cabin in the mountains.',
+          amenities: ['Mountain view', 'Hot tub', 'Hiking trails'],
+          image: 'https://via.placeholder.com/300x200',
+          price: 400
         },
         {
           id: 3,
-          title: 'Mountain Retreat with Hot Tub',
-          image: 'https://via.placeholder.com/400x300',
-          description: 'Relax in the hot tub while enjoying the breathtaking mountain views in this serene retreat. Perfect for a group of friends.',
-          price: 150
-        }
-      ]
+          name: 'City Apartment',
+          description: 'Modern apartment in the heart of the city.',
+          amenities: ['City view', 'Gym', 'Concierge'],
+          image: 'https://via.placeholder.com/300x200',
+          price: 300
+        },
+        {
+          id: 4,
+          name: 'Lake House',
+          description: 'Peaceful lake house with a dock and boat access.',
+      amenities: ['Lake view', 'Dock', 'Boat access'],
+      image: 'https://via.placeholder.com/300x200',
+      price: 450
+    },
+    {
+      id: 5,
+      name: 'Desert Oasis',
+      description: 'Luxurious oasis in the middle of the desert.',
+      amenities: ['Desert view', 'Private pool', 'Spa'],
+      image: 'https://via.placeholder.com/300x200',
+      price: 600
+    },
+    {
+      id: 6,
+      name: 'Island Getaway',
+      description: 'Private island with stunning ocean views.',
+      amenities: ['Island view', 'Private beach', 'Infinity pool'],
+      image: 'https://via.placeholder.com/300x200',
+      price: 800
     }
-  },
-  methods: {
-    book(id) {
-      // Handle booking logic here
-      alert(`You booked place ${id}!`);
-    }
-  }
+  ],
+  cart: []
+};
+},
+computed: {
+featuredGetaways() {
+// return a subset of getaways to be featured
+return this.getaways.slice(0, 3);
+},
+allGetaways() {
+// return all getaways except for the featured ones
+return this.getaways.slice(3);
 }
+},
+methods: {
+addToCart(getaway) {
+// add the selected getaway to the cart
+this.cart.push(getaway);
+}
+}
+};
 </script>
 
 <style>
-.place-card {
-  display: flex;
-  margin-bottom: 20px;
-}
 
-.place-card img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-  margin-right: 20px;
-}
-
-.place-details {
-  flex: 1;
-}
 </style>
+

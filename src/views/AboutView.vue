@@ -8,7 +8,7 @@
 
 <script>
   export default {
-
+    name: 'AboutView'
   }
 </script>
 
@@ -19,6 +19,11 @@
   background-repeat: no-repeat;
   height: 85vh;
   width: 85vw;
+}
+
+.about {
+  margin-top: 10vh;
+  height: 90dvh;
 }
 </style>
 

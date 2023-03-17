@@ -1,6 +1,6 @@
 <template>
   <!-- Nav-Bar -->
-  <nav class="navbar navbar-dark navigation-bar d-flex align-items-center justify-content-end w-100">
+  <nav class="navbar navbar-dark bg-dark navigation-bar d-flex align-items-center justify-content-end w-100">
     <button
       class="navbar-toggler mb-4 me-4"
       type="button"
@@ -65,8 +65,8 @@ export default {
 
 .navigation-bar {
   height: 10vh;
-  /* position: fixed; */
-  /* z-index: 10; */
+  position: fixed;
+  z-index: 10; 
   border: 3px solid black;
 }
 

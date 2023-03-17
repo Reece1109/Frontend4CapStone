@@ -5,29 +5,33 @@
       <p>A stylish and comfortable home away from home</p>
       <button class="btn btn-primary">Book now</button>
     </div>
+    <video autoplay loop>
+      <source src="https://za.pinterest.com/pin/846958273694923327/" type="video/mp4">
+    </video>
   </div>
 </template>
-
 <script>
 export default {
   name: 'HomeView',
 };
 </script>
-
 <style scoped>
 .home {
-  background-image: url(https://i.postimg.cc/BbRmMbX7/b6ee8c2e0d990997372b3fa12c8d0b24.jpg);
-  background-size: cover;
-  background-position: center;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .home-text {
   text-align: center;
   color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
 h1 {
@@ -46,5 +50,15 @@ p {
   border-radius: 2rem;
   background-color: #ff5a5f;
   border-color: #ff5a5f;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 </style>
