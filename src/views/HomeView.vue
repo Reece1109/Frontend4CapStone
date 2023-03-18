@@ -3,7 +3,9 @@
     <div class="home-text">
       <h1>Welcome to the HiveHouse</h1>
       <p>A stylish and comfortable home away from home</p>
-      <button class="btn btn-primary">Book now</button>
+      
+            <router-link to="/login" class="btn btn-primary">Login</router-link>
+            <router-link to="/register" class="btn btn-primary">Register</router-link>
     </div>
     <video autoplay loop>
       <source src="../assets/Home_page.mp4" type="video/mp4">

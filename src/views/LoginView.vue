@@ -1,13 +1,14 @@
-
 <template>
-	<GetawayComponent/>
+    <div>
+<LoginForm/>
+    </div>
 </template>
 
 <script>
-import GetawayComponent from '../components/GetawaysComponent.vue'
+import LoginForm from '../components/UserLogin.vue'
     export default {
         components: {
-            GetawayComponent
+            LoginForm
         }
     }
 </script>

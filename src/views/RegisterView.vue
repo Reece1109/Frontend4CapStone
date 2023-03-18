@@ -1,13 +1,14 @@
-
 <template>
-	<GetawayComponent/>
+    <div>
+<RegisterForm/>
+    </div>
 </template>
 
 <script>
-import GetawayComponent from '../components/GetawaysComponent.vue'
+import RegisterForm from '../components/UserRegister.vue'
     export default {
         components: {
-            GetawayComponent
+            RegisterForm
         }
     }
 </script>

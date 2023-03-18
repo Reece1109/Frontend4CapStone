@@ -103,7 +103,7 @@ export default {
           name: 'Beach House',
           description: 'Beautiful beach house with ocean view.',
           amenities: ['Ocean view', 'Private pool', 'Beach access'],
-          image: 'https://via.placeholder.com/300x200',
+          image: '',
           price: 500
         },
         {
@@ -111,7 +111,7 @@ export default {
           name: 'Mountain Retreat',
           description: 'Cozy cabin in the mountains.',
           amenities: ['Mountain view', 'Hot tub', 'Hiking trails'],
-          image: 'https://via.placeholder.com/300x200',
+          image: '',
           price: 400
         },
         {
@@ -119,7 +119,7 @@ export default {
           name: 'City Apartment',
           description: 'Modern apartment in the heart of the city.',
           amenities: ['City view', 'Gym', 'Concierge'],
-          image: 'https://via.placeholder.com/300x200',
+          image: '',
           price: 300
         },
         {
@@ -127,7 +127,7 @@ export default {
           name: 'Lake House',
           description: 'Peaceful lake house with a dock and boat access.',
       amenities: ['Lake view', 'Dock', 'Boat access'],
-      image: 'https://via.placeholder.com/300x200',
+      image: '',
       price: 450
     },
     {
@@ -135,7 +135,7 @@ export default {
       name: 'Desert Oasis',
       description: 'Luxurious oasis in the middle of the desert.',
       amenities: ['Desert view', 'Private pool', 'Spa'],
-      image: 'https://via.placeholder.com/300x200',
+      image: '',
       price: 600
     },
     {
@@ -143,7 +143,7 @@ export default {
       name: 'Island Getaway',
       description: 'Private island with stunning ocean views.',
       amenities: ['Island view', 'Private beach', 'Infinity pool'],
-      image: 'https://via.placeholder.com/300x200',
+      image: '',
       price: 800
     }
   ],
@@ -153,11 +153,11 @@ export default {
 computed: {
 featuredGetaways() {
 // return a subset of getaways to be featured
-return this.getaways.slice(0, 3);
+return this.Getaway.slice(0, 3);
 },
 allGetaways() {
 // return all getaways except for the featured ones
-return this.getaways.slice(3);
+return this.Getaway.slice(3);
 }
 },
 methods: {
@@ -170,6 +170,36 @@ this.cart.push(getaway);
 </script>
 
 <style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+}
+
+.card-body {
+  height: 180px;
+}
+
+.btn {
+  border-radius: 5px;
+  margin-top: 10px;
+}
 
 </style>
 

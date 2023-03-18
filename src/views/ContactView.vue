@@ -1,4 +1,5 @@
-make a  this contact page more professional and make the two containers fit into each other in the middle and make the background fit the whole page:<template>
+<template>
+<div class="background">
     <div class="container">
       <section class="contact d-flex align-items-center flex-column">
         <h1 class="text-white">Contact Us</h1>
@@ -16,7 +17,7 @@ make a  this contact page more professional and make the two containers fit into
           <div class="submit-button d-flex justify-content-center">
             <button class="btn-submit">Submit</button>
           </div>
-          <div class="social-media-icons">
+          <div class="social-media-icons text-bg-info">
             <i class="bi bi-facebook"></i>
             <i class="bi bi-instagram"></i>
             <i class="bi bi-twitter"></i>
@@ -25,6 +26,7 @@ make a  this contact page more professional and make the two containers fit into
         </form>
       </section>
     </div>
+    </div>
   </template>
   <script>
     export default {
@@ -32,7 +34,7 @@ make a  this contact page more professional and make the two containers fit into
     };
   </script>
   <style scoped>
-    .container {
+    .background {
       background-image: url('https://i.postimg.cc/kMKZVGQD/bc88423ce1cf987a3ad345c29be81923.jpg');
       background-size: cover;
       background-repeat: no-repeat;
@@ -40,7 +42,7 @@ make a  this contact page more professional and make the two containers fit into
       height: 100vh;
       width: 100vw;
     }
-  
+
     form {
       height: 100%;
       width: 40%;

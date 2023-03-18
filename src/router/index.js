@@ -10,29 +10,64 @@ const routes = [
   },
   {
     path: '/about',
-    name: 'About',
-    component: ('../views/AboutView.vue')
+    name: 'about',
+    component: function () {
+      return import('../views/AboutView.vue')
+    }
   },
+  {
+    path: '/register',
+    name: 'register',
+    component: function () {
+      return import('../views/RegisterView.vue')
+    }
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: function () {
+      return import('../views/LoginView.vue')
+    }
+  },
+  {
+    path: '/about',
+    name: 'about',
+    component: function () {
+      return import('../views/AboutView.vue')
+    }
+  },
+
   {
     path: '/admin',
-    name: 'Admin',
-    component: ('../views/AdminPageView.vue')
+    name: 'admin',
+    component: function () {
+      return import('../views/AdminPageView.vue')
+    }
   },
+
   {
     path: '/getaway',
-    name: 'Getaway',
-    component:('../views/GetawaysView.vue')
+    name: 'getaway',
+    component: function () {
+      return import('../views/GetawaysView.vue')
+    }
   },
+
   {
     path: '/cart',
-    name: 'Cart',
-    component: () => ('../views/CartView.vue')
+    name: 'cart',
+    component: function () {
+      return import('../views/CartView.vue')
+    }
   },
+
   {
     path: '/contact',
     name: 'contact',
-    component:('../views/ContactView.vue')
-  }
+    component: function () {
+      return import('../views/ContactView.vue')
+    }
+  },
 ]
 
 const router = createRouter({

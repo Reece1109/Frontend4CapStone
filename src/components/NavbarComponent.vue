@@ -31,6 +31,7 @@
             <router-link to="/" class="nav-link">Home</router-link>
           </li>
           <li class="nav-item">
+            <i class="bi bi-exclamation-circle-fill"></i>
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
@@ -56,9 +57,9 @@
 <script>
 export default {
   name: "HomeView",
-    // props: {
-//     msg: String,
-//   },
+    props: {
+    msg: String,
+  },
 };
 </script>
 
