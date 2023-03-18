@@ -1,4 +1,4 @@
-<template>
+make a  this contact page more professional and make the two containers fit into each other in the middle and make the background fit the whole page:<template>
     <div class="container">
       <section class="contact d-flex align-items-center flex-column">
         <h1 class="text-white">Contact Us</h1>

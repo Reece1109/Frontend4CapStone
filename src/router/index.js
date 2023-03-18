@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-// import AboutView from '../views/AboutView.vue'
+
 
 const routes = [
   {
@@ -9,27 +9,29 @@ const routes = [
     component: HomeView
   },
   {
-    // checked
     path: '/about',
-    name: 'about',
-    component: () => import('../views/AboutView.vue')
+    name: 'About',
+    component: ('../views/AboutView.vue')
+  },
+  {
+    path: '/admin',
+    name: 'Admin',
+    component: ('../views/AdminPageView.vue')
   },
   {
     path: '/getaway',
-    name: 'getaway',
-    component: () => import('../views/GetawayView.vue')
+    name: 'Getaway',
+    component:('../views/GetawaysView.vue')
   },
-  // {
-  //   path: '/cart',
-  //   name: 'cart',
-
-  //   component: () => import('../views/')
-  // },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => ('../views/CartView.vue')
+  },
   {
     path: '/contact',
     name: 'contact',
-
-    component: () => import('../views/ContactView.vue')
+    component:('../views/ContactView.vue')
   }
 ]
 

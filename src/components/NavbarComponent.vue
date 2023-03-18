@@ -34,10 +34,13 @@
             <router-link to="/about" class="nav-link">About</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/resume" class="nav-link">Getaways</router-link>
+            <router-link to="/admin" class="nav-link">Admin</router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/testimonial" class="nav-link">Cart</router-link>
+            <router-link to="/getaway" class="nav-link">Getaways</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/cart" class="nav-link">Cart</router-link>
           </li>
           <li class="nav-item">
             <router-link to="/contact" class="nav-link">Contact Page</router-link>
@@ -53,13 +56,12 @@
 <script>
 export default {
   name: "HomeView",
-  props: {
-    msg: String,
-  },
+    // props: {
+//     msg: String,
+//   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Shadow&display=swap");
 
