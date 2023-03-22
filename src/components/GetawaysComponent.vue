@@ -1,7 +1,6 @@
 <template>
-  <template>
   <div class="container my-5">
-    <h1 class="text-center mb-5">Featured Getaways</h1>
+    <h1 class="text-center mb-5 bg-info">Featured Getaways</h1>
     <div class="row">
       <div v-for="getaway in featuredGetaways" :key="getaway.id" class="col-md-4">
         <div class="card mb-4">
@@ -13,14 +12,16 @@
               <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
             </ul>
             <div class="d-flex justify-content-between align-items-center">
-              <p class="h4">$ {{ getaway.price }}/night</p>
-              <button @click="addToCart(getaway)" class="btn btn-primary">Add to Cart</button>
-            </div>
+  <p class="h4">$ {{ getaway.price }}/night</p>
+  <div>
+    <button @click="addToCart(getaway)" class="btn btn-primary mr-2">Add to Cart</button>
+  </div>
+</div>
           </div>
         </div>
       </div>
     </div>
-    <h1 class="text-center my-5">All Getaways</h1>
+    <h1 class="text-center my-5 bg-info">All Getaways</h1>
     <div class="row">
       <div v-for="getaway in allGetaways" :key="getaway.id" class="col-md-4">
         <div class="card mb-4">
@@ -34,57 +35,6 @@
             <div class="d-flex justify-content-between align-items-center">
               <p class="h4">$ {{ getaway.price }}/night</p>
               <button @click="addToCart(getaway)" class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-
-  <div class="container mt-4">
-    <div class="row">
-      <div class="col-12">
-        <h1 class="text-center mb-4">Getaways</h1>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <h2>Featured Getaways</h2>
-      </div>
-      <div class="col-12">
-        <div class="card-deck">
-          <div class="card" v-for="getaway in featuredGetaways" :key="getaway.id">
-            <img class="card-img-top" :src="getaway.image" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ getaway.name }}</h5>
-              <p class="card-text">{{ getaway.description }}</p>
-              <h6>Amenities:</h6>
-              <ul>
-                <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
-              </ul>
-              <button class="btn btn-primary" @click="addToCart(getaway)">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row mt-4">
-      <div class="col-12">
-        <h2>All Getaways</h2>
-      </div>
-      <div class="col-12">
-        <div class="card-columns">
-          <div class="card" v-for="getaway in allGetaways" :key="getaway.id">
-            <img class="card-img-top" :src="getaway.image" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ getaway.name }}</h5>
-              <p class="card-text">{{ getaway.description }}</p>
-              <h6>Amenities:</h6>
-              <ul>
-                <li v-for="amenity in getaway.amenities" :key="amenity">{{ amenity }}</li>
-              </ul>
-              <button class="btn btn-primary" @click="addToCart(getaway)">Add to Cart</button>
             </div>
           </div>
         </div>
@@ -146,6 +96,7 @@ export default {
       image: '',
       price: 800
     }
+
   ],
   cart: []
 };

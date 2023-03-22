@@ -1,24 +1,30 @@
 <template>
-    <div>
-<form class="form">
-    <p id="heading">Register</p>
-    <div class="field">
+<div class="card">
+  <div class="card-header">
+    <div class="text-header">Register</div>
+  </div>
+  <div class="card-body">
+    <form action="#">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input required="" class="form-control" name="username" id="username" type="text">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input required="" class="form-control" name="email" id="email" type="email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input required="" class="form-control" name="password" id="password" type="password">
+      </div>
+      <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+      </div>
+     <input type="submit" class="btn" value="submit">    </form>
+  </div>
+</div>
 
-    <input autocomplete="off" placeholder="Username" class="input-field" type="text">
-    </div>
-    <div class="field">
-    <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
-    </svg>
-        <input placeholder="Password" class="input-field" type="password">
-    </div>
-    <div class="btn">
-    <button class="button1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
-    <button class="button2">Sign Up</button>
-    </div>
-    <button class="button3">Forgot Password</button>
-</form>
-    </div>
 </template>
 
 <script>
@@ -27,115 +33,79 @@
     }
 </script>
 
-<style scoped>
-.form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        padding-left: 2em;
-        padding-right: 2em;
-        padding-bottom: 0.4em;
-        background-color: #171717;
-        border-radius: 25px;
-        transition: .4s ease-in-out;
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000;
 }
 
-.form:hover {
-    transform: scale(1.05);
-    border: 1px solid black;
+.card {
+  width: 350px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  color: cyan;
 }
 
-#heading {
-    text-align: center;
-  margin: 2em;
+.card-header {
+  background-color: #333;
+  padding: 16px;
+  text-align: center;
+}
+
+.card-header .text-header {
+  margin: 0;
+  font-size: 18px;
   color: rgb(255, 255, 255);
-  font-size: 1.2em;
 }
 
-.field {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5em;
-    border-radius: 25px;
-    padding: 0.6em;
-    border: none;
-    outline: none;
-    color: white;
-    background-color: #171717;
-    box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+.card-body {
+  padding: 16px;
 }
 
-.input-icon {
-    height: 1.3em;
-    width: 1.3em;
-    fill: white;
+.form-group {
+  margin-bottom: 10px;
 }
 
-.input-field {
-    background: none;
-    border: none;
-    outline: none;
-    width: 100%;
-    color: #d3d3d3;
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 1px;
 }
 
-.form .btn {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin-top: 2.5em;
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #000;
+  color: cyan;
 }
 
-.button1 {
-    padding: 0.5em;
-    padding-left: 1.1em;
-    padding-right: 1.1em;
-    border-radius: 5px;
-    margin-right: 0.5em;
-    border: none;
-    outline: none;
-    transition: .4s ease-in-out;
-    background-color: #252525;
-    color: white;
-}
-
-.button1:hover {
-  background-color: black;
-  color: white;
-}
-
-.button2 {
-  padding: 0.5em;
-  padding-left: 2.3em;
-  padding-right: 2.3em;
-  border-radius: 5px;
+.btn {
+  padding: 12px 24px;
+  margin-left: 13px;
+  font-size: 16px;
   border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-
-.button2:hover {
-  background-color: black;
-  color: white;
-}
-
-.button3 {
-  margin-bottom: 3em;
-  padding: 0.5em;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
-}
-
-.button3:hover {
-  background-color: red;
-  color: white;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  text-transform: uppercase;
+  transition: background-color 0
 }
 </style>
 

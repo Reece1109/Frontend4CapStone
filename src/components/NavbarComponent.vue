@@ -71,9 +71,12 @@ export default {
   position: fixed;
   z-index: 10; 
   border: 3px solid black;
+  margin-right: 10px;
 }
 
-button{
+
+
+.button{
     background-color: black;
 }
 .nav{
