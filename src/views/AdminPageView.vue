@@ -1,7 +1,7 @@
 <template>
   <div class="admin-page">
     <h1>Admin Page</h1>
-    <img src="" alt="Airbnb Logo" />
+    <img src="" alt="Airbnb Logo">
   </div>
 </template>
 

@@ -34,14 +34,25 @@
     };
   </script>
   <style scoped>
-    .background {
-      background-image: url('https://i.postimg.cc/kMKZVGQD/bc88423ce1cf987a3ad345c29be81923.jpg');
-      background-size: cover;
-      background-repeat: no-repeat;
-      padding: 80px 0;
-      height: 100vh;
-      width: 100vw;
-    }
+.background {
+  background-image: url('https://i.postimg.cc/kMKZVGQD/bc88423ce1cf987a3ad345c29be81923.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
     form {
       height: 100%;

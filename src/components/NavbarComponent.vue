@@ -69,7 +69,7 @@ export default {
 .navigation-bar {
   height: 10vh;
   position: fixed;
-  z-index: 10; 
+  z-index: 10;
   border: 3px solid black;
   margin-right: 10px;
 }
@@ -110,7 +110,7 @@ li {
 }
 
 .nav-link {
-  color: #ba4040;
+  color: #388ced;
   font-size: 25px;
   font-weight: 800;
   text-decoration: none;
@@ -122,7 +122,7 @@ li {
 
 .nav-link:hover {
   background: #bbb8b8;
-  color: #c52323;
+  color: #5dacbd;
   font-size: 25px;
 }
 

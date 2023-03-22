@@ -3,7 +3,7 @@
     <div class="home-text">
       <h1>Welcome to the HiveHouse</h1>
       <p>A stylish and comfortable home away from home</p>
-      
+
             <router-link to="/login" class="btn btn-primary">Login</router-link>
             <router-link to="/register" class="btn btn-primary">Register</router-link>
     </div>
@@ -12,11 +12,13 @@
     </video>
   </div>
 </template>
+
 <script>
 export default {
   name: 'HomeView',
 };
 </script>
+
 <style scoped>
 .home {
   height: 100vh;

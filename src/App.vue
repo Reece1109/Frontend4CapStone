@@ -2,9 +2,8 @@
 <NavBar/>
 <FooterComponent/>
 <router-view/>
-
-
 </template>
+
 <script>
 import NavBar from './components/NavbarComponent.vue'
 import FooterComponent from './components/FooterComponent.vue'

@@ -22,7 +22,7 @@
     <button class="button3">Forgot Password</button>
 </form>
   </div>
-    </div> 
+    </div>
 </template>
 
 <script>

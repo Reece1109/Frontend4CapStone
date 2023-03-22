@@ -1,7 +1,7 @@
 <template>
   <div class="container my-5">
     <h1 class="text-center mb-5 bg-info">Featured Getaways</h1>
-    <div class="row">
+    <div v-if="featuredGetaways" class="row">
       <div v-for="getaway in featuredGetaways" :key="getaway.id" class="col-md-4">
         <div class="card mb-4">
           <img :src="getaway.image" class="card-img-top" alt="...">
@@ -21,6 +21,7 @@
         </div>
       </div>
     </div>
+    <div v-else><GetawaySpinner></GetawaySpinner>  </div>
     <h1 class="text-center my-5 bg-info">All Getaways</h1>
     <div class="row">
       <div v-for="getaway in allGetaways" :key="getaway.id" class="col-md-4">
@@ -44,7 +45,11 @@
 </template>
 
 <script>
+import GetawaySpinner from './GetawaySpinnerE.vue';
 export default {
+  components: {
+    GetawaySpinner
+  },
   data() {
     return {
       Getaway: [
@@ -53,7 +58,7 @@ export default {
           name: 'Beach House',
           description: 'Beautiful beach house with ocean view.',
           amenities: ['Ocean view', 'Private pool', 'Beach access'],
-          image: '',
+          image: 'https://i.postimg.cc/hGGwfbWZ/483714640999c33283530c80ba97f837.jpg',
           price: 500
         },
         {
@@ -61,7 +66,7 @@ export default {
           name: 'Mountain Retreat',
           description: 'Cozy cabin in the mountains.',
           amenities: ['Mountain view', 'Hot tub', 'Hiking trails'],
-          image: '',
+          image: 'https://i.postimg.cc/jjmBJwhH/953bd8ae4960d5e2bf1e5e29d0775601.jpg',
           price: 400
         },
         {
@@ -69,7 +74,7 @@ export default {
           name: 'City Apartment',
           description: 'Modern apartment in the heart of the city.',
           amenities: ['City view', 'Gym', 'Concierge'],
-          image: '',
+          image: 'https://i.postimg.cc/SKFPTHJB/add10db0dc5becc62931975e557ae66c.jpg',
           price: 300
         },
         {
@@ -77,7 +82,7 @@ export default {
           name: 'Lake House',
           description: 'Peaceful lake house with a dock and boat access.',
       amenities: ['Lake view', 'Dock', 'Boat access'],
-      image: '',
+      image: 'https://i.postimg.cc/SKFPTHJB/add10db0dc5becc62931975e557ae66c.jpg',
       price: 450
     },
     {
@@ -85,7 +90,7 @@ export default {
       name: 'Desert Oasis',
       description: 'Luxurious oasis in the middle of the desert.',
       amenities: ['Desert view', 'Private pool', 'Spa'],
-      image: '',
+      image: 'https://i.postimg.cc/vB3h7KRw/feaf7c0a48492fea9888c34c7e8e1d12.jpg',
       price: 600
     },
     {
@@ -93,7 +98,7 @@ export default {
       name: 'Island Getaway',
       description: 'Private island with stunning ocean views.',
       amenities: ['Island view', 'Private beach', 'Infinity pool'],
-      image: '',
+      image: 'https://i.postimg.cc/3N2gSfVw/ce7f62a3a77a1abec16550332bc1abe4.jpg',
       price: 800
     }
 
