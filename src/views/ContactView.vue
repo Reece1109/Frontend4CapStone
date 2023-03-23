@@ -65,7 +65,7 @@
       padding: 3rem;
       justify-content: center;
     }
-  
+
     input,
     textarea {
       border-radius: 4px;
@@ -77,21 +77,21 @@
       margin-bottom: 1rem;
       color: #555;
     }
-  
+
     textarea {
       resize: none;
     }
-  
+
     input::placeholder,
     textarea::placeholder {
       color: #bbb;
     }
-  
+
     .name-surname {
       display: flex;
       gap: 1rem;
     }
-  
+
     .btn-submit {
       height: 2.5rem;
       width: 10rem;
@@ -104,11 +104,11 @@
       color: #333;
       cursor: pointer;
     }
-  
+
     .btn-submit:hover {
       transform: scale(1.05);
     }
-  
+
     .social-media-icons {
       height: 4rem;
       width: 100%;

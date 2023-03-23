@@ -6,31 +6,66 @@
   <div class="card-body">
     <form action="#">
       <div class="form-group">
-        <label for="username">Username:</label>
-        <input required="" class="form-control" name="username" id="username" type="text">
+        <label for="firstname">FirstName</label>
+        <input required="" class="form-control" v-model="packet.first_name" name="firstname" id="firstname" type="text">
+      </div>
+      <div class="form-group">
+        <label for="lastname">LastName</label>
+        <input required="" class="form-control" v-model="packet.last_name" name="lastname" id="lastname" type="text">
       </div>
       <div class="form-group">
         <label for="email">Email:</label>
-        <input required="" class="form-control" name="email" id="email" type="email">
+        <input required="" class="form-control" v-model="packet.email" name="email" id="email" type="email">
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input required="" class="form-control" name="password" id="password" type="password">
+        <input required="" class="form-control" v-model="packet.userpass" name="password" id="password" type="password">
       </div>
       <div class="form-group">
         <label for="confirm-password">Confirm Password:</label>
-        <input required="" class="form-control" name="confirm-password" id="confirm-password" type="password">
+        <input required="" class="form-control" v-model="packet.userpass" name="confirm-password" id="confirm-password" type="password">
       </div>
-     <input type="submit" class="btn" value="submit">    </form>
+    <input type="submit" v-on:click.prevent="register(packet)" class="btn" value="submit">    </form>
   </div>
 </div>
 
 </template>
 
 <script>
-    export default {
-
+import {useStore} from 'vuex';
+import {useRouter} from 'vue-router';
+// import {ref} from 'vue';
+export default {
+  setup(){
+    let store = useStore();
+    // let spinner = ref(false);
+    let router = useRouter();
+    const packet = {
+      first_name: "",
+      last_name: "",
+      email: "",
+      userpass: ""
+    };
+    async function register(packet){
+      // spinner.value = !spinner.value;
+      await store.dispatch('register', packet);
+      let pack = {
+        "email": packet.email,
+        "userpass": packet.userpass
+      };
+      await store.dispatch('login', pack);
+      localStorage.setItem('user', JSON.stringify(await store.state.user));
+      router.push({
+        name: 'home',
+        path: '/'
+        }).then(()=>location.reload);
     }
+    return{
+      register,
+      packet
+    }
+  }
+}
 </script>
 
 <style>
@@ -43,6 +78,7 @@ html, body {
 
 .card {
   width: 350px;
+  height: 80vh;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
