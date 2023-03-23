@@ -47,7 +47,7 @@
             </div>
           </label>
           <label class="sm">
-            <span>CVV </span>   
+            <span>CVV </span>
             <input class="input" placeholder="1234" size="4" maxlength="4" type="text" required="">
           </label>
         </fieldset>
@@ -58,13 +58,13 @@
       </form>
     </div>
   </template>
-  
+
   <script>
   export default {
-  
+
   }
   </script>
-  
+
   <style>
   .container {
     display: flex;
@@ -72,7 +72,7 @@
     align-items: center;
     height: 100vh;
   }
-  
+
   .form {
     --col1: #00bfff;
     --col2: #00BFFF; /* blue */
@@ -87,18 +87,18 @@
     display: flex;
     flex-direction: column;
     gap: 1.5em 1em;
-    padding: 1em;
+    padding: 0.5px;
     position: relative;
     max-width: 75%;
     margin: auto;
     transition: background .3s ease-out, max-height .3s ease-out;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
   }
-  
+
   nav {
     position: fixed;
     top: 0;
@@ -130,7 +130,7 @@
   max-width: 100%;
   max-height: 100%;
   margin-top: auto;
-  
+
 }
 
 body {
