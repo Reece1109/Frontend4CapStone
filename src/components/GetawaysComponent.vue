@@ -24,7 +24,7 @@
     <div v-else><GetawaySpinner></GetawaySpinner>  </div>
     <h1 class="text-center my-5 bg-info">All Getaways</h1>
     <div class="row">
-      <div v-for="product in products" :key="product.id" class="col-md-4">
+      <div v-for="product in products" :key="product.AirBnB_id" class="col-md-4">
         <div class="card mb-4">
           <img :src="product.image" class="card-img-top" >
           <div class="card-body">
@@ -40,7 +40,7 @@
         </div>
       </div>
     </div>
-  </div>y
+  </div>
 </template>
 
 <script>
@@ -114,7 +114,7 @@ setup() {
 //           description: 'Cozy cabin in the mountains.',
 //           amenities: ['Mountain view', 'Hot tub', 'Hiking trails'],
 //           image: 'https://i.postimg.cc/jjmBJwhH/953bd8ae4960d5e2bf1e5e29d0775601.jpg',
-//           price: 400
+//           price: 1400
 //         },
 //         {
 //           id: 3,

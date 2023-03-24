@@ -22,8 +22,8 @@ export default createStore({
     setProduct: (state, product) =>{
       state.product = product;
   },
-    setProducts: (state, products) =>{
-      state.products = products;
+    setProducts: (state, values) =>{
+      state.products = values;
   },
     setSpinner: (state, spinner) =>{
       state.spinner = spinner;
@@ -78,8 +78,31 @@ export default createStore({
 
 
     async fetchProducts(context) {
-      const res =
-      await axios.get(`${apiLink}/products`);
+      const res = await axios.get(`${apiLink}/products`);
+      const {results, err} = await res.data;
+      if(results) {
+          context.commit('setProducts', results);
+          context.commit('setSpinner', false);
+      }
+      if(err) {
+          context.commit('setMessage', err)
+      }
+      console.log(apiLink);
+},
+    async fetchProduct(context, id) {
+      const res = await axios.get(`${apiLink}/products/${id}`);
+      const {results, err} = await res.data;
+      if(results) {
+          context.commit('setProduct', results);
+          context.commit('setSpinner', false);
+      }
+      if(err) {
+          context.commit('setMessage', err)
+      }
+      console.log(apiLink);
+},
+    async deleteProduct(context) {
+      const res = await axios.delete(`${apiLink}/products`);
       const {results, err} = await res.data;
       if(results) {
           context.commit('setProduct', results);
